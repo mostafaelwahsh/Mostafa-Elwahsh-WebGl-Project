@@ -13,6 +13,7 @@ const viewer = new Viewer(container);
 const switchTo2DButton = document.getElementById('switch-to-2d');
 const switchTo3DButton = document.getElementById('switch-to-3d');
 const originalViewButton = document.getElementById('original-view');
+const deleteWallButton = document.getElementById('delete-wall');
 
 if (switchTo2DButton) {
     switchTo2DButton.addEventListener('click', () => {
@@ -29,5 +30,11 @@ if (switchTo3DButton) {
 if (originalViewButton) {
     originalViewButton.addEventListener('click', () => {
         viewer.resetToOriginalView();
+    });
+}
+
+if (deleteWallButton) {
+    deleteWallButton.addEventListener('click', () => {
+        viewer.deleteSelectedWall();
     });
 }

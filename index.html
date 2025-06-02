@@ -18,6 +18,9 @@
             width: 100%;
             height: 100%;
         }
+        #viewer-container canvas {
+            pointer-events: auto;
+        }
         .toolbar {
             position: absolute;
             bottom: 20px;
@@ -73,6 +76,16 @@
             z-index: 1002;
             transform: translate(-50%, -50%);
         }
+        .danger-button {
+            background: #d32f2f !important;
+        }
+        .danger-button:hover {
+            background: #b71c1c !important;
+        }
+        .danger-button:disabled {
+            background: #999 !important;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +94,9 @@
         <button id="switch-to-2d">2D View</button>
         <button id="switch-to-3d">3D View</button>
         <button id="original-view">Original View</button>
+        <button id="draw-mode">Draw Mode</button>
+        <button id="select-walls">Select Walls</button>
+        <button id="delete-wall" class="danger-button">Delete Wall</button>
     </div>
     <div id="wall-details"></div>
     <script type="module" src="/src/main.ts"></script>
